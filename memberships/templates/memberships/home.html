@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 class="header mb-3">Welcome to Your Company</h2>
+  
+  <p class="mb-2">This page will show the Your Company member something interesting once they have logged in, or show a wiki page if the guest is not logged in.</p>
+  
+  <p class="mb-3">For now, you can edit your <a class="link" href="{% url 'memberships_settings' %}">settings</a>.</p>
+{% endblock %}

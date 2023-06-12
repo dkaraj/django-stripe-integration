@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <h2 class="header mb-3">Member Settings</h2>
+  
+  <form action="{% url 'memberships_settings' %}" method="POST">
+    {% csrf_token %}
+
+    <div class="grid sm:grid-cols-3 gap-y-3 justify-start justify-items-start items-center mb-5 sm:ml-4 w-max text-sm">
+      {% if form.non_field_errors %}<div class="field-error col-span-full">{{ form.non_field_errors }}</div>{% endif %}
+
+      {% for field in form %}
+        {{ field | add_label_class:"-mb-2 sm:mb-0 sm:mr-2 font-bold"}}
+
+        <div class="sm:col-span-2 flex items-center {% if field.widget_type == 'checkbox' %}ml-4 sm:ml-0{% endif %}">
+          {{ field | add_class:"input p-1 rounded-sm" | add_error_class:"input-error" }}
+
+          {% if field.field.required %} <span class="ml-1 text-red-500">*</span> {% endif %}
+
+          {% if field.help_text %}
+            {% include "inc/help_text.html" with field=field %}
+          {% endif %}
+        </div>
+
+        {% if field.errors %}<div class="field-error sm:col-span-full -mt-2">{{ field.errors }}</div>{% endif %}
+      {% endfor %}
+    </div>
+  
+    <input class="btn mb-3" type="submit" value="Save">
+  </form>
+{% endblock %}

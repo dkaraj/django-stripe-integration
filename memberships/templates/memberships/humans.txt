@@ -1,0 +1,20 @@
+# humanstxt.org
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Carwyn Nelson -- Developer
+    James Geddes -- Django Padawan -- @JamesGeddes
+    Tristan Bentham -- Front End Developer
+    Giulio Giunta -- Infrastructure Engineer Padawan
+    Sam Winterhalder -- Developer
+
+# THANKS
+
+    Everyone at the Django Project. Rockstars every one.
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Python, Django
+    Kubernetes, Terraform 
